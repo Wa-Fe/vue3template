@@ -12,7 +12,6 @@ docs
 .husky
 .eslintrc.js
 .eslintrc.cjs
-vite.config.js
 
 # Allowlist 'test.js' in the '.build' folder
 # But do not allow anything else in the '.build' folder to be linted
