@@ -7,6 +7,11 @@ const router = createRouter({
       "path": "/",
       "name": "index",
       "component": () => import("../views/index.vue")
+    },
+    {
+      "path": "/echarts",
+      "name": "echarts",
+      "component": () => import("../views/echartstest.vue")
     }
   ]
 })

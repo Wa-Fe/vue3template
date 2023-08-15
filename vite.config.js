@@ -22,14 +22,15 @@ export default defineConfig({
   "plugins": [
     vue(),
     AutoImport({
+      "imports": ["vue", "vue-router"],
       "resolvers": [ElementPlusResolver()]
     }),
     Components({
-      "resolvers": [ElementPlusResolver({ "importStyle":"sass" })],
+      "resolvers": [ElementPlusResolver({ "importStyle": "sass" })],
       // 自动导入的路径
       "dirs": ["src/components"],
       // 按需引入的文件的类型
-      "extensions": ["vue"],
+      "extensions": ["vue"]
     }),
     // 分析
     visualizer({
@@ -41,16 +42,16 @@ export default defineConfig({
     }),
     // eslint
     eslintPlugin({
-      "include": ["src/**/*.ts", "src/**/*.vue", "src/*.ts", "src/*.vue"],
+      "include": ["src/**/*.ts", "src/**/*.vue", "src/*.ts", "src/*.vue"]
     }),
     // 打包配置
     viteCompression({
       "verbose": true, //是否在控制台输出压缩结果
       "disable": false, //是否禁用压缩
-      "deleteOriginFile":true, //压缩后是否删除原文件
+      "deleteOriginFile": false, //压缩后是否删除原文件
       "threshold": 10240, //启用压缩的文件大小限制，单位是字节
       "algorithm": "gzip", //采用的压缩算法
-      "ext": ".gz", //生成的压缩包后缀
+      "ext": ".gz" //生成的压缩包后缀
     })
   ],
   "resolve": {
@@ -68,14 +69,14 @@ export default defineConfig({
       "^/api": {
         "target": "http://xxxxxx/", // 后端服务实际地址
         "changeOrigin": true, //开启代理
-        "rewrite": (path) => path.replace(/^\/api/, ""),
-      },
-    },
+        "rewrite": (path) => path.replace(/^\/api/, "")
+      }
+    }
   },
   // 自定义主题色
-  "css":{
-    "preprocessorOptions":{
-      "scss":{
+  "css": {
+    "preprocessorOptions": {
+      "scss": {
         "additionalData": "@use \"src/style/public.scss\" as *;"
       }
     }

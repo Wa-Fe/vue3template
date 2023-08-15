@@ -12,14 +12,18 @@
         <el-input v-model="input" placeholder="Please input" />
         {{ formatInout }}
       </div>
+      <!-- 跳转界面 -->
+      <div>
+        <el-button type="primary" @click="tonew">
+          跳转
+        </el-button>
+      </div>
     </el-row>
   </div>
 </template>
 
 <script setup>
-// 全局变量需要 getCurrentInstance const pub = getCurrentInstance()
-// 计算属性 computed 需要引入
-import { ref, getCurrentInstance, computed } from "vue"
+const router = useRouter()
 const count = ref(0)
 const input = ref("")
 const pub = getCurrentInstance()
@@ -44,5 +48,14 @@ function alertmsg (){
 const formatInout = computed(() => {
   return input.value + "xxxxx"
 })
+
+
+
+function tonew () {
+  console.log("12")
+  router.push({
+    "path":"/echarts"
+  })
+}
 </script>
 <style lang="scss"></style>
