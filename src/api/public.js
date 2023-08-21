@@ -1,6 +1,6 @@
-import request from "@/api/request"
+import http from "./http"
 
 // 配置
 export const getSetting = (data) => {
-  return request({ "url": "/pc/index/getSetting", "method": "GET", "data": data })
+  return http.get("/pc/index/getSetting", data)
 }
