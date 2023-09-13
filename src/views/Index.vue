@@ -4,9 +4,7 @@
       <el-button @click="addnum">
         {{ $filters.formatName(count) }}
       </el-button>
-      <el-button type="primary" @click="alertmsg">
-        测试全局的弹窗
-      </el-button>
+      <el-button type="primary" @click="alertmsg"> 测试全局的弹窗 </el-button>
       <!-- 测试计算属性 -->
       <div>
         <el-input v-model="input" placeholder="Please input" />
@@ -14,9 +12,7 @@
       </div>
       <!-- 跳转界面 -->
       <div>
-        <el-button type="primary" @click="tonew">
-          跳转
-        </el-button>
+        <el-button type="primary" @click="tonew"> 跳转 </el-button>
       </div>
     </el-row>
   </div>
@@ -29,18 +25,18 @@ const input = ref("")
 const pub = getCurrentInstance()
 let nu = [
   {
-    "name":"213213"
+    name: "213213"
   },
   {
-    "name":"213"
+    name: "213"
   }
 ]
-function addnum (){
+function addnum() {
   count.value++
 }
 
 // 测试全局函数
-function alertmsg (){
+function alertmsg() {
   pub?.proxy?.$public.TestPublic()
 }
 
@@ -49,12 +45,10 @@ const formatInout = computed(() => {
   return input.value + "xxxxx"
 })
 
-
-
-function tonew () {
+function tonew() {
   console.log("12")
   router.push({
-    "path":"/echarts"
+    path: "/echarts"
   })
 }
 </script>

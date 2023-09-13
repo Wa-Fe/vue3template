@@ -67,7 +67,7 @@ module.exports = {
     "no-multi-spaces":2, //禁止多个空格
     "keyword-spacing":2, //在关键字前后强制保持一致的间距
     "require-await":2, //禁止没有 await 表达式的异步函数
-    "quote-props":2, //需要在对象字面属性名称周围加上引号
+    "quote-props":0, //需要在对象字面属性名称周围加上引号
     "no-underscore-dangle":2, //禁止标识符中的悬空下划线
     "no-nested-ternary":2, //禁止嵌套三元表达式
     "no-loop-func":2, //禁止在循环语句中包含不安全引用的函数声明
@@ -98,7 +98,7 @@ module.exports = {
     "object-curly-spacing": ["error", "always"], // 对象的括号保持一致的间距
     "no-extra-parens": ["error", "functions"], //禁止不必要的括号
     "func-call-spacing": ["error", "never"], //函数不允许换行
-    "space-before-function-paren": ["error", "always"], //函数名左侧必须保持空格
+    "space-before-function-paren": ["error", "never"], //函数名左侧必须保持空格
     "no-empty": 2, //禁止出现空语句块
     "no-irregular-whitespace": 2, //无效或不规则的空白
     "no-sparse-arrays": 2, //禁用稀疏数组
@@ -185,10 +185,7 @@ module.exports = {
     //关闭组件命名规则
     "vue/multi-word-component-names": "off",
     // 强制 html 变量前后必须换行
-    "vue/singleline-html-element-content-newline": [
-      "error",
-      { "ignoreWhenNoAttributes": true, "ignores": [] }
-    ],
+    "vue/singleline-html-element-content-newline": "off",
     // 所有组件的属性必须在同一个位置
     "vue/first-attribute-linebreak": ["error", { "singleline": "ignore", "multiline": "below" }],
     // 多行文本的换行
