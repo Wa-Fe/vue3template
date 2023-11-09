@@ -5,8 +5,9 @@ import vue from "@vitejs/plugin-vue"
 
 // 自动导入
 import AutoImport from "unplugin-auto-import/vite"
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
 import Components from "unplugin-vue-components/vite"
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+
 
 // 打包分析
 import { visualizer } from "rollup-plugin-visualizer"
@@ -22,15 +23,15 @@ export default defineConfig({
   "plugins": [
     vue(),
     AutoImport({
-      "imports": ["vue", "vue-router", "vue"],
-      "resolvers": [ElementPlusResolver()]
+      "imports": ["vue", "vue-router",],
+      "resolvers": [AntDesignVueResolver()]
     }),
     Components({
-      "resolvers": [ElementPlusResolver({ "importStyle": "sass" })],
+      "resolvers": [AntDesignVueResolver({ importStyle: false, resolveIcons: true })],
       // 自动导入的路径
       "dirs": ["src/components"],
       // 按需引入的文件的类型
-      "extensions": ["vue"]
+      "extensions": ["vue"],
     }),
     // 分析
     visualizer({

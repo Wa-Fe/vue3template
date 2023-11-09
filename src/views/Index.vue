@@ -1,28 +1,30 @@
 <template>
   <div>
-    <el-row class="mb-4">
-      <el-button @click="addnum">
-        {{ $filters.formatName(count) }}
-      </el-button>
-      <el-button type="primary" @click="alertmsg"> 测试全局的弹窗 </el-button>
-      <!-- 测试计算属性 -->
-      <div>
-        <el-input v-model="input" placeholder="Please input" />
-        {{ formatInout }}
-      </div>
-      <!-- 跳转界面 -->
-      <div>
-        <el-button type="primary" @click="tonew"> 跳转 </el-button>
-      </div>
-    </el-row>
+    <a-button @click="addnum">
+      {{ $filters.formatName(count) }}
+    </a-button>
+    <a-button type="primary" @click="alertmsg">Primary Button</a-button>
+    <!-- 测试计算属性 -->
+    <div>
+      {{ formatInout }}
+    </div>
+    <!-- 跳转界面 -->
+    <div>
+      <a-button type="primary">Primary Button</a-button>
+      <StepBackwardOutlined />
+      <a-empty />
+    </div>
+    <context-holder />
   </div>
 </template>
 
 <script setup>
+import { message } from "ant-design-vue"
 const router = useRouter()
 const count = ref(0)
 const input = ref("")
 const pub = getCurrentInstance()
+const [messageApi, contextHolder] = message.useMessage()
 let nu = [
   {
     name: "213213"
@@ -32,7 +34,9 @@ let nu = [
   }
 ]
 function addnum() {
-  count.value++
+  console.log("213")
+  messageApi.info("Hello, Ant Design Vue!")
+  // count.value++
 }
 
 // 测试全局函数
