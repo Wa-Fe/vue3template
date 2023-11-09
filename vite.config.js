@@ -48,7 +48,7 @@ export default defineConfig({
     // 打包配置
     viteCompression({
       "verbose": true, //是否在控制台输出压缩结果
-      "disable": false, //是否禁用压缩
+      "disable": true, //是否禁用压缩
       "deleteOriginFile": false, //压缩后是否删除原文件
       "threshold": 10240, //启用压缩的文件大小限制，单位是字节
       "algorithm": "gzip", //采用的压缩算法
