@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-const data = reactive({})
-
 </script>
 <style scoped lang='scss'>
 </style>

@@ -76,7 +76,7 @@ module.exports = {
     "no-else-return":2, //在 if 语句中的 return 语句之后禁止 else 块
     "max-nested-callbacks":"error", //强制回调可以嵌套的最大深度 默认为10
     "max-depth":"error", //强制块可以嵌套的最大深度 默认为4
-    "id-length":["error", { "min":2, "max": 20 }], //变量的声明最短长度为2
+    "id-length":["error", { "min":2, "max": 30 }], //变量的声明最短长度为2
     "default-case":2, //在 switch 语句中需要 default
     "default-case-last":2, //在 switch 语句中 default  必须放在最后
     "block-scoped-var":2, //在定义的范围内强制使用变量,不允许变量提升

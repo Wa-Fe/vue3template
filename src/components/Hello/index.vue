@@ -3,9 +3,8 @@
 </template>
 
 <script setup>
-import { reactive, toRefs } from "vue"
-const data = reactive({})
-
+// import { useSettingStore } from "@/store/setting.js"
+// const store = useSettingStore()
 </script>
 <style scoped lang='scss'>
 </style>

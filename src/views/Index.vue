@@ -1,7 +1,12 @@
 <template>
   <div>
     <a-button @click="addnum">
-      {{ $filters.formatName(count) }}
+      <!-- {{ $filters.formatName(count) }} -->
+      {{ useSettingStore.count }}
+    </a-button>
+    <a-button @click="resetStore">
+      <!-- {{ $filters.formatName(count) }} -->
+      reset
     </a-button>
     <a-button type="primary" @click="alertmsg">Primary Button</a-button>
     <!-- 测试计算属性 -->
@@ -14,17 +19,23 @@
       <StepBackwardOutlined />
       <a-empty />
     </div>
-    <context-holder />
+    <div>
+      <a-checkbox v-model:checked="checked">Checkbox</a-checkbox>
+    </div>
+    <Hello />
   </div>
 </template>
 
 <script setup>
-import { message } from "ant-design-vue"
+import { useStore } from "@/store/index.js"
 const router = useRouter()
 const count = ref(0)
 const input = ref("")
+const checked = ref(false)
 const pub = getCurrentInstance()
-const [messageApi, contextHolder] = message.useMessage()
+const store = useStore()
+const { useSettingStore } = store
+console.log(useSettingStore)
 let nu = [
   {
     name: "213213"
@@ -34,9 +45,10 @@ let nu = [
   }
 ]
 function addnum() {
-  console.log("213")
-  messageApi.info("Hello, Ant Design Vue!")
+  // console.log("213")
+  // messageApi.info("Hello, Ant Design Vue!")
   // count.value++
+  useSettingStore.count++
 }
 
 // 测试全局函数
@@ -54,6 +66,10 @@ function tonew() {
   router.push({
     path: "/echarts"
   })
+}
+
+function resetStore(){
+  useSettingStore.$reset()
 }
 </script>
 <style lang="scss"></style>
