@@ -68,7 +68,7 @@ function tonew() {
   })
 }
 
-function resetStore(){
+function resetStore() {
   useSettingStore.$reset()
 }
 </script>
