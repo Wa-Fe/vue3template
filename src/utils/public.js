@@ -1,5 +1,5 @@
 // 弹窗
-function TestPublic () {
+function TestPublic() {
   alert("213213")
 }
 

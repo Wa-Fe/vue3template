@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue"
 
 // 自动导入
 import AutoImport from "unplugin-auto-import/vite"
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 import Components from "unplugin-vue-components/vite"
 
 
@@ -24,10 +24,10 @@ export default defineConfig({
     vue(),
     AutoImport({
       "imports": ["vue", "vue-router",],
-      "resolvers": [AntDesignVueResolver()]
+      "resolvers": [ElementPlusResolver()]
     }),
     Components({
-      "resolvers": [AntDesignVueResolver({ importStyle: false, resolveIcons: true })],
+      "resolvers": [ElementPlusResolver({ importStyle: true })],
       // 自动导入的路径
       "dirs": ["src/components"],
       // 按需引入的文件的类型

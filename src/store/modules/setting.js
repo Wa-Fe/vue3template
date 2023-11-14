@@ -11,9 +11,9 @@ export const useSettingStore = defineStore("setting", {
     storage: localStorage, //修改存储位置
     key: "setting",
     paths: ["count"], //指定要长久化的字段,
-    serializer: {
-      deserialize: parse,
-      serialize: stringify
-    }
+    // serializer: {
+    //   deserialize: parse,
+    //   serialize: stringify
+    // }
   }
 })

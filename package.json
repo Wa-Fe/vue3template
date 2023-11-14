@@ -11,9 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^7.0.1",
-    "ant-design-vue": "^4.0.6",
     "axios": "^1.4.0",
+    "element-plus": "^2.4.2",
     "pinia": "^2.0.0-rc.10",
     "pinia-plugin-persistedstate": "^3.2.0",
     "vue": "^3.3.4",

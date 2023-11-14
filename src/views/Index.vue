@@ -1,26 +1,24 @@
 <template>
   <div>
-    <a-button @click="addnum">
+    <el-button @click="addnum">
       <!-- {{ $filters.formatName(count) }} -->
       {{ useSettingStore.count }}
-    </a-button>
-    <a-button @click="resetStore">
+    </el-button>
+    <el-button @click="resetStore">
       <!-- {{ $filters.formatName(count) }} -->
       reset
-    </a-button>
-    <a-button type="primary" @click="alertmsg">Primary Button</a-button>
+    </el-button>
+    <el-button type="primary" @click="alertmsg">Primary Button</el-button>
     <!-- 测试计算属性 -->
     <div>
       {{ formatInout }}
     </div>
     <!-- 跳转界面 -->
     <div>
-      <a-button type="primary">Primary Button</a-button>
-      <StepBackwardOutlined />
-      <a-empty />
-    </div>
-    <div>
-      <a-checkbox v-model:checked="checked">Checkbox</a-checkbox>
+      <el-button type="primary" @click="showMessage()">Primary Button</el-button>
+      <div class="test">
+        zhge////
+      </div>
     </div>
     <Hello />
   </div>
@@ -35,7 +33,7 @@ const checked = ref(false)
 const pub = getCurrentInstance()
 const store = useStore()
 const { useSettingStore } = store
-console.log(useSettingStore)
+const colorCustom = "orange"
 let nu = [
   {
     name: "213213"
@@ -71,5 +69,13 @@ function tonew() {
 function resetStore() {
   useSettingStore.$reset()
 }
+
+function showMessage() {
+  ElMessage("this is a message.")
+}
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.test{
+  color: v-bind("colorCustom");
+}
+</style>
